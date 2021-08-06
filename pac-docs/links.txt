@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/986447/batch-file-to-copy-files-from-one-folder-to-another-folder
+
+https://stackoverflow.com/questions/33752732/xcopy-still-asking-f-file-d-directory-confirmation/33753310
+
+https://stackoverflow.com/questions/21033801/checking-if-a-folder-exists-using-a-bat-file

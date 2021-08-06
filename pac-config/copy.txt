@@ -1,0 +1,1 @@
+%PAC%\00-pac-user-files\test.txt=%userprofile%\.m2\temp\path.txt
