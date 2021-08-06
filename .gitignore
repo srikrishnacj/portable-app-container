@@ -1,8 +1,9 @@
 portable-apps/*
+!portable-apps/.gitkeep
 pac-temp/*
-user-data/*
 !pac-temp/.gitkeep
-!ser-data/.gitkeep
+user-data/*
+!user-data/.gitkeep
 
 # Created by https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudiocode
