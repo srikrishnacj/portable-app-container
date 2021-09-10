@@ -1,6 +1,7 @@
 ##################################################################################################################################
-#   Any path you wanted to add SHELL PATH Variable. By default, every folder in portable-apps, two path entries are added.
+#   Any path you wanted to add SHELL PATH Variable. By default, every folder(only direct child folders) in portable-apps, two path entries are added.
 #   One is actual location path and another one is actual location postfixes with /bin
+#   if you don't want folders automatically added to path, then place it sub folders
 #   You can also add any path you like
 #   Ex: %PAC%\portable-apps\jdk\jdk-11.0.12+7\bin
 ##################################################################################################################################
