@@ -1,7 +1,7 @@
 @call %UTIL%\remove-temp-variables.bat
 
-SET TEMP_STARTUP_CONFIG=%CONFIG_FOLDER%\startupdir.txt
-SET TEMP_STARTUP_TEMP=%PAC_TEMP%\startupdir.txt
+SET TEMP_STARTUP_CONFIG=%CONFIG_FOLDER%\startupdir-config.txt
+SET TEMP_STARTUP_TEMP=%PAC_TEMP%\startupdir-config.txt
 
 if not exist %TEMP_STARTUP_CONFIG% (
 	echo "startupdir Config file not found at: "%TEMP_STARTUP_CONFIG%

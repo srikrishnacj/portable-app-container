@@ -5,8 +5,8 @@ rem https://stackoverflow.com/questions/18600317/batch-file-append-a-string-insi
 
 ECHO Setting MANUAL PATH
 
-SET PATH_CONFIG=%CONFIG_FOLDER%\path.txt
-SET TEMP_PATH_CONFIG=%PAC_TEMP%\path.txt
+SET PATH_CONFIG=%CONFIG_FOLDER%\path-config.txt
+SET TEMP_PATH_CONFIG=%PAC_TEMP%\path-config.txt
 
 
 if not exist %PATH_CONFIG% (

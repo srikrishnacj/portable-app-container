@@ -1,8 +1,8 @@
 ECHO Coping User Files
 
-SET COPY_CONFIG=%CONFIG_FOLDER%\copy.txt
-SET TEMP_COPY_CONFIG=%PAC_TEMP%\copy.txt
-SET TEMP_COPY_CONFIG2=%PAC_TEMP%\copy2.txt
+SET COPY_CONFIG=%CONFIG_FOLDER%\copy-config.txt
+SET TEMP_COPY_CONFIG=%PAC_TEMP%\copy-config.txt
+SET TEMP_COPY_CONFIG2=%PAC_TEMP%\copy-config2.txt
 
 @call %UTIL%\clean-file.bat %TEMP_COPY_CONFIG%
 @call %UTIL%\clean-file.bat %TEMP_COPY_CONFIG2%

@@ -1,0 +1,7 @@
+##################################################################################################################################
+#   You many want to add your portable application to start menu for the ease of searching and launching the app.
+#   Add the full path of executable here, and it will be added to started during shell startup
+#   if there is already a start menu entry present, then it will skip
+#   Ex: %PAC%\portable-apps\vscode-1.58.0-portable\code.exe
+##################################################################################################################################
+

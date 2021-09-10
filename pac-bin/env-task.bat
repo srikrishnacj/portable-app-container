@@ -4,8 +4,8 @@ rem https://stackoverflow.com/questions/3068929/how-to-read-file-contents-into-a
 
 ECHO Setting Environment Variables
 
-SET ENV_CONFIG=%CONFIG_FOLDER%\env.txt
-SET TEMP_ENV_CONFIG=%PAC_TEMP%\env.txt
+SET ENV_CONFIG=%CONFIG_FOLDER%\env-config.txt
+SET TEMP_ENV_CONFIG=%PAC_TEMP%\env-config.txt
 
 if not exist %ENV_CONFIG% (
 	echo "Env Config file not found at: "%CONFIG_FILE%

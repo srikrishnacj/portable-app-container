@@ -8,8 +8,8 @@ ECHO Adding StartMenu Entries
 
 SET "START_MENU_FOLDER=%AppData%\Microsoft\Windows\Start Menu\Programs"
 
-SET START_MENU_CONFIG=%CONFIG_FOLDER%\startmenu.txt
-SET TEMP_START_MENU_CONFIG=%PAC_TEMP%\startmenu.txt
+SET START_MENU_CONFIG=%CONFIG_FOLDER%\startmenu-config.txt
+SET TEMP_START_MENU_CONFIG=%PAC_TEMP%\startmenu-config.txt
 
 if not exist %START_MENU_CONFIG% (
 	echo "StartMenu Config file not found at: "%CONFIG_FILE%
