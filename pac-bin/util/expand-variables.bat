@@ -1,18 +1,15 @@
 @REM Does variable substitution on string given in a file
 
-SET SOURCE=%1
-SET DESTINATION=%TEMP_FOLDER%\temp-expand.txt
+SET TEMP_EV_SOURCE=%1
+SET TEMP_EV_DST=%PAC_TEMP%\expand-variables.txt
 
-del %DESTINATION% >nul 2>&1
+del %TEMP_EV_DST% >nul 2>&1
 
 SETLOCAL ENABLEDELAYEDEXPANSION
-for /F "tokens=*" %%a in (%SOURCE%) do (
+for /F "tokens=*" %%a in (%TEMP_EV_SOURCE%) do (
 	call set "expanded=%%a"
-	echo !expanded!>>%DESTINATION%
+	echo !expanded!>>%TEMP_EV_DST%
 )
 endlocal
 
-del %SOURCE% >nul 2>&1
-for /F "tokens=*" %%a in (%DESTINATION%) do (
-	echo %%a>>%SOURCE%
-)
+@call %UTIL%\copy-file.bat %TEMP_EV_DST% %TEMP_EV_SOURCE%

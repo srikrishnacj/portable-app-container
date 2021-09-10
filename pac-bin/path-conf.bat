@@ -1,60 +1,33 @@
 rem reads paths from path.txt and sets the path variables
-
 rem https://stackoverflow.com/questions/18600317/batch-file-append-a-string-inside-a-for-loop/18600971
 
-ECHO Setting PATH
+@call %UTIL%\remove-temp-variables.bat
 
-SET CONFIG_FILE=%CONFIG_FOLDER%\path.txt
-SET PATH_TEMP_FILE=%TEMP_FOLDER%\temp-path.txt
-SET PATH_TEMP_FILE_2=%TEMP_FOLDER%\temp-path-2.txt
+ECHO Setting MANUAL PATH
 
-del %PATH_TEMP_FILE% >nul 2>&1
-del %PATH_TEMP_FILE_2% >nul 2>&1
+SET PATH_CONFIG=%CONFIG_FOLDER%\path.txt
+SET TEMP_PATH_CONFIG=%PAC_TEMP%\path.txt
 
-if not exist %CONFIG_FILE% (
-	echo "Path Config file not found at: "%CONFIG_FILE%
+
+if not exist %PATH_CONFIG% (
+	echo "Path Config file not found at: "%TEMP_PATH_CONFIG%
 	echo "Stopping Script Execution"
 	exit /b
 )
 
-@call %UTIL%\sanitize.bat %CONFIG_FILE% %PATH_TEMP_FILE%
-
-if not exist %PATH_TEMP_FILE% (
-	echo %TAB%no paths to add
-	goto end
-)
-
-@call %UTIL%\expand-variables.bat %PATH_TEMP_FILE%
-
-for /F "tokens=*" %%a in (%PATH_TEMP_FILE%) do (
-	if not exist %%a (
-	    ECHO %TAB%Skipping. It does not exists. %%a
-	) else IF not EXIST %%a\ (
-		ECHO %TAB%Skipping. It is not a directory. %%a
-	) else (
-		echo %%a>>%PATH_TEMP_FILE_2%
-	)
-)
-
-if not exist %PATH_TEMP_FILE_2% (
-	echo %TAB%no valid paths to add
-	goto end
-)
+@call %UTIL%\clean-file.bat %TEMP_PATH_CONFIG%
+@call %UTIL%\copy-file.bat %PATH_CONFIG% %TEMP_PATH_CONFIG%
+@call %UTIL%\remove-comments-from-file.bat %TEMP_PATH_CONFIG%
+@call %UTIL%\remove-white-spaces-in-file.bat %TEMP_PATH_CONFIG%
+@call %UTIL%\expand-variables.bat %TEMP_PATH_CONFIG%
+@call %UTIL%\remove-non-dir-paths.bat %TEMP_PATH_CONFIG%
 
 SET T_PATH=
-for /F "tokens=*" %%a in (%PATH_TEMP_FILE_2%) do (
+for /F "tokens=*" %%a in (%TEMP_PATH_CONFIG%) do (
 	call set "T_PATH=%%T_PATH%%;%%a"
 	echo %TAB%Adding to PATH:= %%a
 )
 
 set "PATH=%PATH%;%T_PATH%"
 
-:end
-
-SET CONFIG_FILE=
-SET PATH_TEMP_FILE=
-SET PATH_TEMP_FILE_2=
-set expanded=
-SET T_PATH=
-
-ECHO.
+echo.
