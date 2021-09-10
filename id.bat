@@ -20,7 +20,6 @@ SET TAB=
 @call %BIN_FOLDER%\copy-task.bat
 @call %BIN_FOLDER%\startmenu-task.bat
 @call %BIN_FOLDER%\startupdir-task.bat
-cls
 @call %BIN_FOLDER%\banner-task.bat
 
 
