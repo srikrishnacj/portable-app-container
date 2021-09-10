@@ -8,3 +8,7 @@ https://stackoverflow.com/questions/21033801/checking-if-a-folder-exists-using-a
 Removing Empty lines from text file
 https://stackoverflow.com/questions/45013144/remove-blank-line-from-text-file/45021815#45021815
 https://stackoverflow.com/questions/16059838/remove-lines-from-a-file-starting-with-a-space-including-empty-lines/16062125#16062125
+
+
+ASCII Generator
+https://onlineasciitools.com/convert-text-to-ascii-art
