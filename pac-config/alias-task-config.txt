@@ -1,0 +1,7 @@
+##################################################################################################################################
+#   if you want to create a alias for cmd, add them here as key=value format
+#   this file should be treated as a proper @doskey macro file
+#   Ex:
+##################################################################################################################################
+
+idea=mvn clean && mvn package -DskipTests=true && mvn idea:clean idea:idea && iu .
