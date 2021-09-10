@@ -1,1 +1,4 @@
-%PAC%\00-pac-user-files\test.txt=%userprofile%\.m2\temp\path.txt
+##################################################################################################################################
+#   during shell startup you may want to startup copy files or config files to temporary location
+#   Ex: %PAC%\user-data\maven-settings.xml=%userprofile%\.m2\settings.xml
+##################################################################################################################################
