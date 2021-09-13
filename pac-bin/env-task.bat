@@ -21,7 +21,7 @@ if not exist %ENV_CONFIG% (
 
 for /f "delims== tokens=1,2" %%G in (%TEMP_ENV_CONFIG%) do (
 	set %%G=%%H
-	echo %TAB%Adding Variable %%G = %%H
+	echo %TAB%%%G = %%H
 )
 
 ECHO.

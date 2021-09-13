@@ -16,5 +16,7 @@ if not exist %TEMP_ALIAS_CONFIG% (
 
 @doskey /macrofile=%TEMP_ALIAS_TEMP%
 
+for /F "tokens=*" %%A in (%TEMP_ALIAS_TEMP%) do echo %TAB%%%A
+
 echo.
 @call %UTIL%\remove-temp-variables.bat

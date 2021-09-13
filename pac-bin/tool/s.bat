@@ -1,3 +1,4 @@
+@echo off
 @call %UTIL%\remove-temp-variables.bat
 
 SET TEMP_STARTUP_CONFIG=%CONFIG_FOLDER%\startupdir-config.txt
@@ -15,10 +16,8 @@ if not exist %TEMP_STARTUP_CONFIG% (
 @call %UTIL%\remove-non-dir-paths.bat %TEMP_STARTUP_TEMP%
 
 for /F "tokens=*" %%a in (%TEMP_STARTUP_TEMP%) do (
-    IF "%PAC_FIRST_RUN%"=="true" (
-        echo Switching to: %%a
-	    cd /d %%a
-	)
+    echo Switching to: %%a
+    cd /d %%a
 )
 
 @call %UTIL%\remove-temp-variables.bat

@@ -16,7 +16,7 @@ for /d %%i in ("%APP_DIR%\*") do (
 SET T_PATH=
 for /F "tokens=*" %%a in (%TEMP_DEFAULT_PATH_CONFIG%) do (
 	call set "T_PATH=%%T_PATH%%;%%a"
-	echo %TAB%Adding to PATH:= %%a
+	echo %TAB%PATH+=%%a
 )
 
 set "PATH=%PATH%;%T_PATH%"
