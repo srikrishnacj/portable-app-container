@@ -14,12 +14,3 @@ IF "%PAC_FIRST_RUN%" == "" (
 )
 
 SET TAB=
-
-@call %BIN_FOLDER%\alias-task.bat
-@call %BIN_FOLDER%\path-task.bat
-@call %BIN_FOLDER%\env-task.bat
-@call %BIN_FOLDER%\copy-task.bat
-@call %BIN_FOLDER%\startmenu-task.bat
-@call %BIN_FOLDER%\startupdir-task.bat
-if not "%1"=="debug" call cls
-@call %BIN_FOLDER%\banner-task.bat
